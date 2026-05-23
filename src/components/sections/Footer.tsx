@@ -1,4 +1,4 @@
-import { FOOTER_SECTIONS, FOOTER_POLICIES } from "../../constants/siteData";
+import { FOOTER_SECTIONS, FOOTER_POLICIES } from "@/constants/siteData";
 
 export function Footer() {
   return (

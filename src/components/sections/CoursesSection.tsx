@@ -1,5 +1,5 @@
 import { Clock, Users } from "lucide-react";
-import { COURSES } from "../../constants/siteData";
+import { COURSES } from "@/constants/siteData";
 
 export function CoursesSection() {
   return (

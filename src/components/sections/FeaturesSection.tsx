@@ -1,5 +1,5 @@
 import { ChevronRight } from "lucide-react";
-import { FEATURES } from "../../constants/siteData";
+import { FEATURES } from "@/constants/siteData";
 
 export function FeaturesSection() {
   return (

@@ -1,5 +1,5 @@
-import { TESTIMONIALS, SOCIAL_PROOF } from "../../constants/siteData";
-import { StarRating } from "../common/StarRating";
+import { TESTIMONIALS, SOCIAL_PROOF } from "@/constants/siteData";
+import { StarRating } from "@/components/common/StarRating";
 
 export function TestimonialsSection() {
   return (
@@ -22,7 +22,9 @@ export function TestimonialsSection() {
               className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl border border-slate-100 hover:-translate-y-1 transition-all duration-300"
             >
               <StarRating count={stars} />
-              <p className="mt-4 text-slate-600 text-sm leading-relaxed">"{text}"</p>
+              <p className="mt-4 text-slate-600 text-sm leading-relaxed">
+                &ldquo;{text}&rdquo;
+              </p>
               <div className="mt-6 flex items-center gap-3">
                 <div
                   className={`w-10 h-10 rounded-full ${color} flex items-center justify-center font-bold text-sm flex-shrink-0`}

@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { CULTURE } from "../../constants/siteData";
+import { CULTURE } from "@/constants/siteData";
 
 export function CultureSection() {
   return (
@@ -18,7 +18,7 @@ export function CultureSection() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {CULTURE.map(({ icon: Icon, label, desc, color, emoji }) => (
+          {CULTURE.map(({ label, desc, color, emoji }) => (
             <div
               key={label}
               className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
