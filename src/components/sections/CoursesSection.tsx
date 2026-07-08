@@ -23,7 +23,8 @@ export function CoursesSection() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {COURSES.map(({ id, level, students, hours, color, textColor, bg, progress }) => {
-            const tags = t(`courses.items.${id}.tags`, { returnObjects: true }) as string[];
+            const tagsValue = t(`courses.items.${id}.tags`, { returnObjects: true });
+            const tags = Array.isArray(tagsValue) ? (tagsValue as string[]) : [];
 
             return (
               <div
