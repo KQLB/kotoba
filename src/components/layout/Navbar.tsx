@@ -1,23 +1,21 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS } from "@/constants/siteData";
 import Link from "next/link";
-import { MobileMenu } from "@/components/shared/MobileMenu";
+import { useTranslation } from "react-i18next";
+import { NAV_LINKS } from "@/constants/siteData";
+import { MobileMenu } from "@/components/layout/MobileMenu";
+import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
+import { useScrolled } from "@/hooks/useScrolled";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
+  const scrolled = useScrolled();
+  const { t } = useTranslation();
 
   const toggleMenu = () => {
-    setMenuOpen((open) => !open)
+    setMenuOpen((open) => !open);
   };
 
   return (
@@ -45,11 +43,15 @@ export function Navbar() {
                 href={link.href}
                 className="px-3 py-1.5 text-sm font-medium text-slate-600 hover:text-rose-500 hover:bg-rose-50 rounded-lg transition-all duration-200"
               >
-                {link.label}
+                {t(`nav.${link.key}`)}
               </Link>
             ))}
           </div>
-          {/* 
+
+          <div className="hidden md:flex items-center gap-2">
+            <LanguageSwitcher />
+          </div>
+          {/*
           <div className="hidden md:flex items-center gap-2">
             <button className="px-4 py-1.5 text-sm font-semibold text-slate-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-all">
               Login

@@ -1,0 +1,189 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "vocabulary": "Từ vựng",
+    "grammar": "Ngữ pháp",
+    "kanji": "Kanji",
+    "jlpt": "JLPT",
+    "community": "Cộng đồng"
+  },
+  "hero": {
+    "badge": "Ứng dụng học tiếng Nhật",
+    "titleLine1": "Học tiếng Nhật",
+    "titleHighlight": "Thông minh hơn",
+    "description": "Chinh phục JLPT, từ vựng, kanji, nghe và nói với các bài học ứng dụng AI được hơn <strong>500.000</strong> học viên trên toàn thế giới tin dùng.",
+    "startLearningFree": "Học miễn phí ngay",
+    "jlptTest": "Thi thử JLPT",
+    "showcase": {
+      "kanjiMeaning": "Sakura · Hoa anh đào",
+      "streakTitle": "47 ngày",
+      "streakSubtitle": "Chuỗi học 🔥",
+      "xpTitle": "2.840 XP",
+      "xpSubtitle": "Tuần này",
+      "passedBadge": "Đã đậu N3!"
+    }
+  },
+  "stats": {
+    "activeLearners": "Học viên tích cực",
+    "passRate": "Tỷ lệ đậu",
+    "vocabulary": "Từ vựng",
+    "appStoreRating": "Đánh giá App Store",
+    "jlptPassRate": "Tỷ lệ đậu JLPT",
+    "countries": "Quốc gia"
+  },
+  "features": {
+    "badge": "✨ Tính năng",
+    "titlePre": "Mọi thứ bạn cần để",
+    "titleHighlight": "làm chủ tiếng Nhật",
+    "subtitle": "Sáu chế độ học mạnh mẽ được thiết kế bởi các nhà ngôn ngữ học và được hơn 500K học viên yêu thích.",
+    "explore": "Khám phá",
+    "items": {
+      "vocabulary": {
+        "title": "Luyện từ vựng",
+        "desc": "Hơn 10.000 từ với flashcard lặp lại ngắt quãng",
+        "badge": "Phổ biến nhất"
+      },
+      "kanji": {
+        "title": "Học Kanji",
+        "desc": "Hoạt ảnh thứ tự nét viết cho mọi cấp độ JLPT",
+        "badge": "N5–N1"
+      },
+      "jlptMock": {
+        "title": "Thi thử JLPT",
+        "desc": "Đề thi tính giờ mô phỏng kỳ thi JLPT thật",
+        "badge": "Luyện thi"
+      },
+      "listening": {
+        "title": "Luyện nghe",
+        "desc": "Giọng đọc người bản xứ với điều chỉnh tốc độ",
+        "badge": "Âm thanh"
+      },
+      "speaking": {
+        "title": "AI luyện nói",
+        "desc": "Phản hồi phát âm theo thời gian thực từ AI",
+        "badge": "AI hỗ trợ"
+      },
+      "flashcards": {
+        "title": "Flashcard",
+        "desc": "Thẻ SRS thông minh thích ứng với tốc độ của bạn",
+        "badge": "Thích ứng"
+      }
+    }
+  },
+  "courses": {
+    "badge": "🎓 Khóa học",
+    "titlePre": "Khóa học",
+    "titleHighlight": "phổ biến",
+    "subtitle": "Chương trình học bài bản theo chuẩn JLPT chính thức. Chinh phục từ N5 đến N1 theo tốc độ của riêng bạn.",
+    "businessHeading": "Thương mại",
+    "students": "{{value}} học viên",
+    "hoursContent": "{{hours}} giờ học",
+    "completionRate": "Tỷ lệ hoàn thành",
+    "startCourse": "Bắt đầu học →",
+    "items": {
+      "n5": {
+        "title": "Sơ cấp",
+        "tags": ["Hiragana", "Katakana", "Kanji cơ bản"]
+      },
+      "n4": {
+        "title": "Sơ trung cấp",
+        "tags": ["Ngữ pháp", "Từ vựng", "300 Kanji"]
+      },
+      "n3": {
+        "title": "Trung cấp",
+        "tags": ["Ngữ pháp nâng cao", "650 Kanji", "Đọc hiểu"]
+      },
+      "bj": {
+        "title": "Tiếng Nhật thương mại",
+        "tags": ["Keigo", "Email", "Thuyết trình"]
+      }
+    }
+  },
+  "culture": {
+    "badge": "🌸 Văn hóa",
+    "titlePre": "Đắm mình vào",
+    "titleHighlight": "văn hóa Nhật Bản",
+    "subtitle": "Ngôn ngữ là văn hóa. Học qua anime, du lịch, ẩm thực và đời sống Nhật Bản thường ngày.",
+    "explore": "Khám phá",
+    "items": {
+      "anime": {
+        "label": "Anime",
+        "desc": "Học tiếng Nhật qua các bộ anime kinh điển"
+      },
+      "travel": {
+        "label": "Du lịch",
+        "desc": "Những mẫu câu thiết yếu cho chuyến phiêu lưu Nhật Bản của bạn"
+      },
+      "food": {
+        "label": "Ẩm thực",
+        "desc": "Gọi món như người bản xứ tại mọi nhà hàng"
+      },
+      "life": {
+        "label": "Đời sống Nhật",
+        "desc": "Phong tục hàng ngày, lễ nghi & truyền thống theo mùa"
+      }
+    }
+  },
+  "progress": {
+    "badge": "📊 Tiến độ hàng ngày",
+    "titlePre": "Theo dõi",
+    "titleHighlight": "hành trình của bạn",
+    "subtitle": "Đều đặn hơn là dồn sức. Xây dựng chuỗi ngày học và xem tiếng Nhật của bạn tiến bộ vượt bậc.",
+    "onFire": "🔥 BÙNG CHÁY",
+    "dayStreak": "Chuỗi ngày học",
+    "thisWeek": "⚡ TUẦN NÀY",
+    "xpPoints": "Điểm XP",
+    "xpFromYesterday": "+340 XP so với hôm qua",
+    "today": "🎯 HÔM NAY",
+    "dailyGoal": "Mục tiêu hàng ngày (XP)",
+    "rank": "🏅 HẠNG",
+    "currentLevel": "Cấp độ hiện tại"
+  },
+  "testimonials": {
+    "badge": "💬 Đánh giá",
+    "titlePre": "Được yêu thích bởi",
+    "titleHighlight": "học viên toàn cầu",
+    "subtitle": "Kết quả thật từ những học viên thật.",
+    "items": {
+      "sarah": {
+        "level": "Đã đậu N3",
+        "text": "Từ con số 0 đến N3 trong 14 tháng. AI luyện nói đã sửa những lỗi trọng âm mà tôi chưa từng biết mình mắc phải."
+      },
+      "marco": {
+        "level": "Học viên N4",
+        "text": "Đề thi thử chính xác đến kinh ngạc. Tôi đạt 87 điểm trong kỳ thi thật sau khi đạt trung bình 85 điểm tại đây."
+      },
+      "aisha": {
+        "level": "Tốt nghiệp N5",
+        "text": "Chuyên mục văn hóa anime khiến tôi càng yêu tiếng Nhật hơn. Học mà cứ như đang giải trí."
+      },
+      "chen": {
+        "level": "TN thương mại",
+        "text": "Các bài học Keigo đã cứu tôi trong buổi phỏng vấn ở Tokyo. Tôi đã được nhận việc. Arigatou gozaimasu! 🎉"
+      }
+    }
+  },
+  "footer": {
+    "description": "Cách học tiếng Nhật thông minh nhất — từ N5 đến N1 và hơn thế nữa. Được xây dựng với tình yêu dành cho người học ngôn ngữ.",
+    "copyright": "© 2025 NihonGo. Bảo lưu mọi quyền. Làm bằng ❤️ dành cho người học tiếng Nhật.",
+    "sections": {
+      "learn": {
+        "heading": "Học tập",
+        "links": ["Từ vựng", "Kanji", "Ngữ pháp", "Luyện nghe", "Luyện nói"]
+      },
+      "jlpt": {
+        "heading": "JLPT",
+        "links": ["Khóa N5", "Khóa N4", "Khóa N3", "Khóa N2", "Khóa N1"]
+      },
+      "company": {
+        "heading": "Công ty",
+        "links": ["Về chúng tôi", "Blog", "Tuyển dụng", "Báo chí", "Liên hệ"]
+      }
+    },
+    "policies": ["Chính sách bảo mật", "Điều khoản dịch vụ", "Chính sách cookie"]
+  },
+  "vocabularyPage": {
+    "title": "Từ vựng",
+    "description": "Đây là trang từ vựng."
+  }
+}

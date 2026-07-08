@@ -1,3 +1,7 @@
+'use client';
+
+import { useTranslation } from "react-i18next";
+
 interface FloatingBadgeProps {
   icon: string;
   title: string;
@@ -48,6 +52,8 @@ function FloatingBadgeGradient({
 }
 
 function KanjiCard() {
+  const { t } = useTranslation();
+
   return (
     <div className="absolute inset-8 bg-white rounded-3xl shadow-2xl flex flex-col items-center justify-center p-6 gap-3">
       <div
@@ -57,7 +63,7 @@ function KanjiCard() {
         桜
       </div>
       <div className="text-lg font-bold text-rose-500">さくら</div>
-      <div className="text-sm text-slate-500">Sakura · Cherry Blossom</div>
+      <div className="text-sm text-slate-500">{t("hero.showcase.kanjiMeaning")}</div>
       <div className="flex gap-1 mt-1">
         {["N5", "JLPT", "Kanji"].map((t) => (
           <span
@@ -73,6 +79,8 @@ function KanjiCard() {
 }
 
 export function HeroShowcase() {
+  const { t } = useTranslation();
+
   return (
     <div className="relative flex justify-center lg:justify-end">
       <div className="relative w-80 h-80 sm:w-96 sm:h-96">
@@ -83,18 +91,18 @@ export function HeroShowcase() {
 
         <FloatingBadge
           icon="🔥"
-          title="47 Day"
-          subtitle="Streak 🔥"
+          title={t("hero.showcase.streakTitle")}
+          subtitle={t("hero.showcase.streakSubtitle")}
           className="-top-2 -right-2"
         />
         <FloatingBadge
           icon="⚡"
-          title="2,840 XP"
-          subtitle="This week"
+          title={t("hero.showcase.xpTitle")}
+          subtitle={t("hero.showcase.xpSubtitle")}
           delay={1}
           className="-bottom-2 -left-2"
         />
-        <FloatingBadgeGradient icon="✓" title="N3 Passed!" delay={2} />
+        <FloatingBadgeGradient icon="✓" title={t("hero.showcase.passedBadge")} delay={2} />
       </div>
     </div>
   );

@@ -1,0 +1,189 @@
+{
+  "nav": {
+    "home": "Home",
+    "vocabulary": "Vocabulary",
+    "grammar": "Grammar",
+    "kanji": "Kanji",
+    "jlpt": "JLPT",
+    "community": "Community"
+  },
+  "hero": {
+    "badge": "Japanese Learning App",
+    "titleLine1": "Learn Japanese",
+    "titleHighlight": "Smarter",
+    "description": "Master JLPT, vocabulary, kanji, listening, and speaking with AI-powered lessons trusted by <strong>500,000+</strong> learners worldwide.",
+    "startLearningFree": "Start Learning Free",
+    "jlptTest": "JLPT Test",
+    "showcase": {
+      "kanjiMeaning": "Sakura · Cherry Blossom",
+      "streakTitle": "47 Day",
+      "streakSubtitle": "Streak 🔥",
+      "xpTitle": "2,840 XP",
+      "xpSubtitle": "This week",
+      "passedBadge": "N3 Passed!"
+    }
+  },
+  "stats": {
+    "activeLearners": "Active Learners",
+    "passRate": "Pass Rate",
+    "vocabulary": "Vocabulary",
+    "appStoreRating": "App Store Rating",
+    "jlptPassRate": "JLPT Pass Rate",
+    "countries": "Countries"
+  },
+  "features": {
+    "badge": "✨ Features",
+    "titlePre": "Everything you need to",
+    "titleHighlight": "master Japanese",
+    "subtitle": "Six powerful learning modes designed by linguists and beloved by 500K+ students.",
+    "explore": "Explore",
+    "items": {
+      "vocabulary": {
+        "title": "Vocabulary Practice",
+        "desc": "10,000+ words with spaced-repetition flashcards",
+        "badge": "Most Popular"
+      },
+      "kanji": {
+        "title": "Kanji Learning",
+        "desc": "Stroke-order animations for all JLPT levels",
+        "badge": "N5–N1"
+      },
+      "jlptMock": {
+        "title": "JLPT Mock Test",
+        "desc": "Full timed exams mirroring the real JLPT",
+        "badge": "Exam Prep"
+      },
+      "listening": {
+        "title": "Listening Practice",
+        "desc": "Native-speaker audio with speed control",
+        "badge": "Audio"
+      },
+      "speaking": {
+        "title": "Speaking AI",
+        "desc": "Real-time pronunciation feedback from AI",
+        "badge": "AI-Powered"
+      },
+      "flashcards": {
+        "title": "Flashcards",
+        "desc": "Smart SRS cards that adapt to your pace",
+        "badge": "Adaptive"
+      }
+    }
+  },
+  "courses": {
+    "badge": "🎓 Courses",
+    "titlePre": "Popular",
+    "titleHighlight": "courses",
+    "subtitle": "Structured curriculum aligned with official JLPT standards. Go from N5 to N1 at your own pace.",
+    "businessHeading": "Business",
+    "students": "{{value}} students",
+    "hoursContent": "{{hours}}h content",
+    "completionRate": "Completion rate",
+    "startCourse": "Start Course →",
+    "items": {
+      "n5": {
+        "title": "Beginner",
+        "tags": ["Hiragana", "Katakana", "Basic Kanji"]
+      },
+      "n4": {
+        "title": "Elementary",
+        "tags": ["Grammar", "Vocabulary", "Kanji 300"]
+      },
+      "n3": {
+        "title": "Intermediate",
+        "tags": ["Complex Grammar", "Kanji 650", "Reading"]
+      },
+      "bj": {
+        "title": "Business Japanese",
+        "tags": ["Keigo", "Emails", "Presentations"]
+      }
+    }
+  },
+  "culture": {
+    "badge": "🌸 Culture",
+    "titlePre": "Dive into",
+    "titleHighlight": "Japanese culture",
+    "subtitle": "Language is culture. Learn through anime, travel, food, and everyday Japanese life.",
+    "explore": "Explore",
+    "items": {
+      "anime": {
+        "label": "Anime",
+        "desc": "Learn Japanese through iconic anime series"
+      },
+      "travel": {
+        "label": "Travel",
+        "desc": "Essential phrases for your Japan adventure"
+      },
+      "food": {
+        "label": "Food & Dining",
+        "desc": "Order like a local at any restaurant"
+      },
+      "life": {
+        "label": "Japanese Life",
+        "desc": "Daily customs, etiquette & seasonal traditions"
+      }
+    }
+  },
+  "progress": {
+    "badge": "📊 Daily Progress",
+    "titlePre": "Track your",
+    "titleHighlight": "journey",
+    "subtitle": "Consistency beats intensity. Build your streak and watch your Japanese skyrocket.",
+    "onFire": "🔥 ON FIRE",
+    "dayStreak": "Day Streak",
+    "thisWeek": "⚡ THIS WEEK",
+    "xpPoints": "XP Points",
+    "xpFromYesterday": "+340 XP from yesterday",
+    "today": "🎯 TODAY",
+    "dailyGoal": "Daily Goal (XP)",
+    "rank": "🏅 RANK",
+    "currentLevel": "Current Level"
+  },
+  "testimonials": {
+    "badge": "💬 Testimonials",
+    "titlePre": "Loved by",
+    "titleHighlight": "learners worldwide",
+    "subtitle": "Real results from real students.",
+    "items": {
+      "sarah": {
+        "level": "Passed N3",
+        "text": "From zero to N3 in 14 months. The AI speaking coach fixed my pitch-accent issues I never knew I had."
+      },
+      "marco": {
+        "level": "N4 Student",
+        "text": "The mock exams are incredibly accurate. I scored 87 on the real test after averaging 85 on here."
+      },
+      "aisha": {
+        "level": "N5 Graduate",
+        "text": "The anime culture section made me fall deeper in love with Japanese. Learning feels like entertainment."
+      },
+      "chen": {
+        "level": "Business JP",
+        "text": "Keigo lessons saved me in my Tokyo job interview. I got the position. Arigatou gozaimasu! 🎉"
+      }
+    }
+  },
+  "footer": {
+    "description": "The smartest way to learn Japanese — from N5 to N1 and beyond. Built with love for language learners.",
+    "copyright": "© 2025 NihonGo. All rights reserved. Made with ❤️ for Japanese learners.",
+    "sections": {
+      "learn": {
+        "heading": "Learn",
+        "links": ["Vocabulary", "Kanji", "Grammar", "Listening", "Speaking"]
+      },
+      "jlpt": {
+        "heading": "JLPT",
+        "links": ["N5 Course", "N4 Course", "N3 Course", "N2 Course", "N1 Course"]
+      },
+      "company": {
+        "heading": "Company",
+        "links": ["About Us", "Blog", "Careers", "Press", "Contact"]
+      }
+    },
+    "policies": ["Privacy Policy", "Terms of Service", "Cookie Policy"]
+  },
+  "vocabularyPage": {
+    "title": "Vocabulary",
+    "description": "This is the vocabulary page."
+  }
+}
