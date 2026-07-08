@@ -1,11 +1,80 @@
-import { FloatingKanji } from "@/components/common/FloatingKanji";
-import {
-  HeroBadge,
-  HeroHeading,
-  HeroButtons,
-  HeroStats,
-  HeroShowcase,
-} from "@/components/sections/hero";
+'use client';
+
+import { ArrowRight, Play, Trophy } from "lucide-react";
+import { Trans, useTranslation } from "react-i18next";
+import { STATS } from "@/constants/siteData";
+import { FloatingKanji } from "./FloatingKanji";
+import { HeroShowcase } from "./HeroShowcase";
+
+function HeroBadge() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur border border-rose-200 rounded-full px-4 py-1.5 shadow-sm">
+      <span className="w-2 h-2 bg-rose-500 rounded-full animate-pulse" />
+      <span className="text-xs font-semibold text-rose-600 tracking-wide">
+        {t("hero.badge")}
+      </span>
+    </div>
+  );
+}
+
+function HeroHeading() {
+  const { t } = useTranslation();
+
+  return (
+    <div>
+      <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-none tracking-tight">
+        {t("hero.titleLine1")}
+        <br />
+        <span className="bg-gradient-to-r from-rose-500 via-pink-500 to-orange-400 bg-clip-text text-transparent">
+          {t("hero.titleHighlight")}
+        </span>
+      </h1>
+      <p className="mt-5 text-lg text-slate-500 leading-relaxed max-w-md">
+        <Trans
+          i18nKey="hero.description"
+          components={{ strong: <strong className="text-slate-700" /> }}
+        />
+      </p>
+    </div>
+  );
+}
+
+function HeroButtons() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="flex flex-wrap gap-3">
+      <button className="group flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-rose-500 to-pink-500 text-white font-bold rounded-2xl shadow-lg shadow-rose-200 hover:shadow-rose-300 hover:-translate-y-1 transition-all duration-300 text-sm">
+        <Play size={16} className="fill-white" />
+        {t("hero.startLearningFree")}
+        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+      </button>
+      <button className="flex items-center gap-2 px-6 py-3.5 bg-white text-slate-800 font-bold rounded-2xl border-2 border-slate-200 hover:border-rose-300 hover:bg-rose-50 hover:-translate-y-1 transition-all duration-300 text-sm shadow-sm">
+        <Trophy size={16} className="text-amber-500" />
+        {t("hero.jlptTest")}
+      </button>
+    </div>
+  );
+}
+
+function HeroStats() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="flex flex-wrap gap-6 pt-2">
+      {STATS.map((s) => (
+        <div key={s.id} className="text-center">
+          <div className="text-2xl font-black text-slate-800">
+            {s.icon} {s.value}
+          </div>
+          <div className="text-xs text-slate-500 font-medium">{t(`stats.${s.id}`)}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function HeroSection() {
   return (

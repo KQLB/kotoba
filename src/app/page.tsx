@@ -1,19 +1,21 @@
-import { HeroSection } from "@/components/sections/hero/HeroSection";
+import { HeroSection } from "@/components/sections/hero";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { ProgressSection } from "@/components/sections/ProgressSection";
 import { CoursesSection } from "@/components/sections/CoursesSection";
 import { CultureSection } from "@/components/sections/CultureSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
-export default function App() {
+export default function HomePage() {
   return (
-    <div className="font-sans antialiased bg-white">
-      <HeroSection />
-      <FeaturesSection />
-      <ProgressSection />
-      <CoursesSection />
-      <CultureSection />
-      <TestimonialsSection />
-    </div>
+    <>
+      <main>
+        <HeroSection />
+        <FeaturesSection />
+        <ProgressSection />
+        <CoursesSection />
+        <CultureSection />
+        <TestimonialsSection />
+      </main>
+    </>
   );
 }

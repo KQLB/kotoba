@@ -1,7 +1,9 @@
 'use client';
 
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { NAV_LINKS } from "@/constants/siteData";
+import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
 
 interface MobileMenuProps {
   menuOpen: boolean;
@@ -9,6 +11,8 @@ interface MobileMenuProps {
 }
 
 export function MobileMenu({ menuOpen, setMenuOpen }: MobileMenuProps) {
+  const { t } = useTranslation();
+
   return (
     <>
       {menuOpen && (
@@ -20,9 +24,12 @@ export function MobileMenu({ menuOpen, setMenuOpen }: MobileMenuProps) {
               className="block px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-rose-500 hover:bg-rose-50 rounded-lg transition-all"
               onClick={() => setMenuOpen(false)}
             >
-              {link.label}
+              {t(`nav.${link.key}`)}
             </Link>
           ))}
+          <div className="px-3 pt-3">
+            <LanguageSwitcher />
+          </div>
         </div>
       )}
     </>

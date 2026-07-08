@@ -1,5 +1,8 @@
 import { Star } from "lucide-react";
-import type { StarRatingProps } from "@/types/type";
+
+interface StarRatingProps {
+  count: number;
+}
 
 export function StarRating({ count }: StarRatingProps) {
   return (
