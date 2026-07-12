@@ -7,6 +7,9 @@
     "jlpt": "JLPT",
     "community": "Cộng đồng"
   },
+  "comingSoon": {
+    "description": "Trang này đang được xây dựng. Quay lại sau nhé!"
+  },
   "hero": {
     "badge": "Ứng dụng học tiếng Nhật",
     "titleLine1": "Học tiếng Nhật",
@@ -184,6 +187,15 @@
   },
   "vocabularyPage": {
     "title": "Từ vựng",
-    "description": "Đây là trang từ vựng."
+    "description": "Lật thẻ flashcard và chinh phục từ vựng JLPT theo tốc độ của riêng bạn.",
+    "allLevels": "Tất cả cấp độ",
+    "loading": "Đang tải flashcard...",
+    "error": "Không thể tải từ vựng. Vui lòng thử lại sau.",
+    "empty": "Không tìm thấy từ nào ở cấp độ này.",
+    "flipHint": "Nhấn hoặc bấm phím cách để xem nghĩa",
+    "flipBackHint": "Nhấn hoặc bấm phím cách để lật lại",
+    "prev": "Trước",
+    "next": "Tiếp",
+    "progress": "{{current}} / {{total}}"
   }
 }
