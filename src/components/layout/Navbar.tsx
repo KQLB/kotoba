@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { NAV_LINKS } from "@/constants/siteData";
 import { MobileMenu } from "@/components/layout/MobileMenu";
@@ -13,6 +14,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const scrolled = useScrolled();
   const { t } = useTranslation();
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setMenuOpen((open) => !open);
@@ -37,15 +39,21 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-1">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-1.5 text-sm font-medium text-slate-600 hover:text-rose-500 hover:bg-rose-50 rounded-lg transition-all duration-200"
-              >
-                {t(`nav.${link.key}`)}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 ${isActive
+                    ? "text-rose-500 bg-rose-50 font-semibold"
+                    : "text-slate-600 hover:text-rose-500 hover:bg-rose-50"
+                    }`}
+                >
+                  {t(`nav.${link.key}`)}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="hidden md:flex items-center gap-2">
