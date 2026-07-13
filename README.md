@@ -5,7 +5,7 @@ Japanese vocabulary-learning web app. Frontend built with Next.js; the companion
 ## Stack
 
 - Next.js 16 (App Router) + React 19, TypeScript
-- Tailwind CSS v4
+- Tailwind CSS v4 + shadcn/ui (class-based dark mode included)
 - i18next / react-i18next (English / Vietnamese)
 
 ## Getting started
@@ -34,16 +34,19 @@ Open [http://localhost:3000](http://localhost:3000).
 kotoba/
 ├── public/
 └── src/
-    ├── app/                # routes (App Router)
-    │   └── vocabulary/     # /vocabulary route (stub)
+    ├── app/                # routes: / (landing), /vocabulary (flashcards),
+    │                       # /kanji /grammar /jlpt /community (coming soon)
     ├── components/
     │   ├── common/
     │   ├── layout/         # Navbar, Footer, MobileMenu
     │   ├── providers/      # I18nProvider
     │   ├── sections/       # landing page sections
-    │   └── shared/         # LanguageSwitcher, SectionHeader, StarRating
+    │   ├── shared/         # LanguageSwitcher, ThemeToggle, SectionHeader, ...
+    │   ├── ui/             # shadcn/ui primitives
+    │   └── vocabulary/     # Flashcard, VocabularyDeck
     ├── constants/          # static site content
     ├── hooks/
+    ├── lib/                # cn() util, API fetch helpers (src/lib/api/)
     ├── locales/            # en.json, vi.json
     ├── types/
     └── utils/              # i18next init
@@ -59,8 +62,17 @@ Use the `@/*` path alias for imports from `src/` — relative parent imports (`.
 - [../kotoba-be/docs/api.md](../kotoba-be/docs/api.md) — REST endpoint theo module
 - [../kotoba-be/docs/db-schema.md](../kotoba-be/docs/db-schema.md) — data model
 
+## Configuration
+
+`NEXT_PUBLIC_API_URL` — base URL of the `kotoba-be` API (defaults to `http://localhost:3001/api/v1`). If the API is unreachable, `/vocabulary` falls back to a built-in mock dataset.
+
 ## Status
 
-Currently a fresh scaffold with a marketing-style landing page and a stub `/vocabulary` route. No backend integration yet.
+- Marketing landing page (hero, courses, culture, features, progress, testimonials) — done
+- `/vocabulary` — JLPT flashcard deck with level filter and keyboard navigation (Space to flip, ←/→ to move); uses mock data until the backend is deployed
+- `/kanji`, `/grammar`, `/jlpt`, `/community` — coming-soon stubs
+- Dark mode toggle (persisted, follows system preference by default) and en/vi language switcher in the navbar
 
 See [CLAUDE.md](CLAUDE.md) for guidance when working on this repo with Claude Code.
+
+Demo link: https://kotoba-delta-tan.vercel.app/
