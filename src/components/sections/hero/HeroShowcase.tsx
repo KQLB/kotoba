@@ -19,12 +19,12 @@ function FloatingBadge({
 }: FloatingBadgeProps) {
   return (
     <div
-      className={`absolute bg-white rounded-2xl shadow-lg p-3 flex items-center gap-2 animate-float ${className}`}
+      className={`absolute bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-3 flex items-center gap-2 animate-float ${className}`}
       style={{ animationDelay: `${delay}s` }}
     >
       <span className="text-lg">{icon}</span>
       <div>
-        <div className="text-xs font-black text-slate-800">{title}</div>
+        <div className="text-xs font-black text-slate-800 dark:text-slate-100">{title}</div>
         <div className="text-xs text-slate-400">{subtitle}</div>
       </div>
     </div>
@@ -55,20 +55,20 @@ function KanjiCard() {
   const { t } = useTranslation();
 
   return (
-    <div className="absolute inset-8 bg-white rounded-3xl shadow-2xl flex flex-col items-center justify-center p-6 gap-3">
+    <div className="absolute inset-8 bg-white dark:bg-slate-900 rounded-3xl shadow-2xl flex flex-col items-center justify-center p-6 gap-3">
       <div
-        className="text-7xl font-black text-slate-900"
+        className="text-7xl font-black text-slate-900 dark:text-white"
         style={{ fontFamily: "'Noto Serif JP', serif" }}
       >
         桜
       </div>
       <div className="text-lg font-bold text-rose-500">さくら</div>
-      <div className="text-sm text-slate-500">{t("hero.showcase.kanjiMeaning")}</div>
+      <div className="text-sm text-slate-500 dark:text-slate-400">{t("hero.showcase.kanjiMeaning")}</div>
       <div className="flex gap-1 mt-1">
         {["N5", "JLPT", "Kanji"].map((t) => (
           <span
             key={t}
-            className="px-2 py-0.5 bg-rose-50 text-rose-600 text-xs font-semibold rounded-full border border-rose-100"
+            className="px-2 py-0.5 bg-rose-50 dark:bg-rose-950/50 text-rose-600 dark:text-rose-400 text-xs font-semibold rounded-full border border-rose-100 dark:border-rose-900"
           >
             {t}
           </span>

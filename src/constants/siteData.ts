@@ -45,8 +45,8 @@ export const COURSES: Course[] = [
     students: "24.5k",
     hours: 40,
     color: "bg-emerald-500",
-    textColor: "text-emerald-600",
-    bg: "bg-emerald-50",
+    textColor: "text-emerald-600 dark:text-emerald-400",
+    bg: "bg-emerald-50 dark:bg-emerald-950/40",
     progress: 85,
   },
   {
@@ -55,8 +55,8 @@ export const COURSES: Course[] = [
     students: "18.2k",
     hours: 60,
     color: "bg-blue-500",
-    textColor: "text-blue-600",
-    bg: "bg-blue-50",
+    textColor: "text-blue-600 dark:text-blue-400",
+    bg: "bg-blue-50 dark:bg-blue-950/40",
     progress: 72,
   },
   {
@@ -65,8 +65,8 @@ export const COURSES: Course[] = [
     students: "12.8k",
     hours: 100,
     color: "bg-violet-500",
-    textColor: "text-violet-600",
-    bg: "bg-violet-50",
+    textColor: "text-violet-600 dark:text-violet-400",
+    bg: "bg-violet-50 dark:bg-violet-950/40",
     progress: 60,
   },
   {
@@ -75,8 +75,8 @@ export const COURSES: Course[] = [
     students: "6.1k",
     hours: 80,
     color: "bg-rose-500",
-    textColor: "text-rose-600",
-    bg: "bg-rose-50",
+    textColor: "text-rose-600 dark:text-rose-400",
+    bg: "bg-rose-50 dark:bg-rose-950/40",
     progress: 55,
   },
 ];
@@ -95,7 +95,7 @@ export const TESTIMONIALS: Testimonial[] = [
     country: "🇺🇸 USA",
     avatar: "SK",
     stars: 5,
-    color: "bg-pink-100 text-pink-700",
+    color: "bg-pink-100 text-pink-700 dark:bg-pink-950/60 dark:text-pink-300",
   },
   {
     id: "marco",
@@ -103,7 +103,7 @@ export const TESTIMONIALS: Testimonial[] = [
     country: "🇮🇹 Italy",
     avatar: "MR",
     stars: 5,
-    color: "bg-blue-100 text-blue-700",
+    color: "bg-blue-100 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300",
   },
   {
     id: "aisha",
@@ -111,7 +111,7 @@ export const TESTIMONIALS: Testimonial[] = [
     country: "🇳🇬 Nigeria",
     avatar: "AT",
     stars: 5,
-    color: "bg-violet-100 text-violet-700",
+    color: "bg-violet-100 text-violet-700 dark:bg-violet-950/60 dark:text-violet-300",
   },
   {
     id: "chen",
@@ -119,7 +119,7 @@ export const TESTIMONIALS: Testimonial[] = [
     country: "🇨🇳 China",
     avatar: "CW",
     stars: 5,
-    color: "bg-amber-100 text-amber-700",
+    color: "bg-amber-100 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300",
   },
 ];
 

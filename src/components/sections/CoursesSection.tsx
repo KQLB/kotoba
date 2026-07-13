@@ -9,7 +9,7 @@ export function CoursesSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 bg-slate-50 dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={t("courses.badge")}
@@ -29,7 +29,7 @@ export function CoursesSection() {
             return (
               <div
                 key={level}
-                className="group bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+                className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
               >
                 {/* Header */}
                 <div className={`${bg} px-6 py-8 relative overflow-hidden`}>
@@ -40,12 +40,12 @@ export function CoursesSection() {
                   <h3 className={`font-black text-lg ${textColor}`}>
                     {level === "BJ" ? t("courses.businessHeading") : `JLPT ${level}`}
                   </h3>
-                  <p className="text-slate-500 text-sm">{t(`courses.items.${id}.title`)}</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">{t(`courses.items.${id}.title`)}</p>
                 </div>
 
                 {/* Body */}
                 <div className="p-6">
-                  <div className="flex items-center justify-between text-xs text-slate-500 mb-3">
+                  <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-3">
                     <span className="flex items-center gap-1">
                       <Users size={12} />
                       {t("courses.students", { value: students })}
@@ -58,17 +58,17 @@ export function CoursesSection() {
 
                   <div className="mb-4">
                     <div className="flex justify-between text-xs mb-1.5">
-                      <span className="text-slate-500 font-medium">{t("courses.completionRate")}</span>
+                      <span className="text-slate-500 dark:text-slate-400 font-medium">{t("courses.completionRate")}</span>
                       <span className={`${textColor} font-bold`}>{progress}%</span>
                     </div>
-                    <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                       <div className={`h-full ${color} rounded-full`} style={{ width: `${progress}%` }} />
                     </div>
                   </div>
 
                   <div className="flex flex-wrap gap-1 mb-5">
                     {tags.map((tag) => (
-                      <span key={tag} className="px-2 py-0.5 bg-slate-50 text-slate-500 text-xs rounded-full border border-slate-100">
+                      <span key={tag} className="px-2 py-0.5 bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-xs rounded-full border border-slate-100 dark:border-slate-700">
                         {tag}
                       </span>
                     ))}

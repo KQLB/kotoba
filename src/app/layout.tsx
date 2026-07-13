@@ -27,7 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans antialiased bg-white">
+      <head>
+        <script
+          // ponytail: inline script (not next/script) to set the class before hydration, avoiding a flash of the wrong theme
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem("theme")==="dark"||(!localStorage.getItem("theme")&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`,
+          }}
+        />
+      </head>
+      <body className="font-sans antialiased bg-background text-foreground">
         <I18nProvider>
           <Navbar />
           {children}
