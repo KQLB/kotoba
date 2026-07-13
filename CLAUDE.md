@@ -27,7 +27,7 @@ Next.js 16 App Router project (see AGENTS.md above — this version has breaking
 - `src/constants/siteData.ts` — static content/config used across sections.
 - Path alias `@/*` maps to `src/*`. Relative parent imports (`../`) are disallowed by ESLint — always use `@/`.
 
-There is no backend integration yet: no fetch/axios calls, no API base URL config. The companion API lives in the sibling `kotoba-be` repo (NestJS) but is not yet wired up.
+Backend status: vocabulary data comes from the Jisho dictionary API, proxied through the Route Handler at `src/app/api/vocabulary/route.ts` (Jisho has no CORS headers, so the browser can't call it directly). Client code fetches via helpers in `src/lib/api/` — never `fetch` directly from components. The companion API in the sibling `kotoba-be` repo (NestJS) is not yet wired up.
 
 ## Dark mode
 
@@ -53,6 +53,15 @@ Mobile-first Tailwind: base classes target mobile, scale up with `sm:` / `md:` /
 - Headings scale: e.g. `text-4xl sm:text-5xl`, hero `text-5xl sm:text-6xl lg:text-7xl`
 - Desktop nav is `hidden md:flex`; mobile gets `MobileMenu` behind a `md:hidden` hamburger — new nav items go in both
 - Flex rows that can overflow use `flex-wrap`
+
+## Code organization
+
+- **Keep components and pages small.** A page composes components; it should not contain big blocks of JSX itself. When a component grows past ~150 lines or renders several distinct visual blocks, split it — either into small local function components in the same file (see HeroSection: HeroBadge, HeroHeading, HeroButtons, HeroStats) or into its own folder with an `index.ts` when the pieces are big enough to stand alone (see `sections/hero/`).
+- **One responsibility per part.** Data fetching/state lives in the container component (VocabularyDeck), presentation in dumb children (Flashcard). Don't mix a fetch, a form, and layout in one component.
+- **Types go in `src/types/`**, one file per domain (`site.ts`, `vocabulary.ts`) — never declare shared interfaces inline in a component. Props interfaces used by only one component may stay in that component's file.
+- **Static content/config goes in `src/constants/siteData.ts`**, not inline arrays in JSX.
+- **Reusable stateful logic goes in `src/hooks/`** (see `useScrolled`); API calls go in `src/lib/api/` — components never call `fetch` directly.
+- Shared UI used by 2+ features goes in `components/shared/`; shadcn primitives stay in `components/ui/` (don't hand-edit beyond styling needs).
 
 ## Internationalization (i18n)
 

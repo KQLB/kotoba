@@ -196,6 +196,14 @@
     "flipBackHint": "Nhấn hoặc bấm phím cách để lật lại",
     "prev": "Trước",
     "next": "Tiếp",
-    "progress": "{{current}} / {{total}}"
+    "progress": "{{current}} / {{total}}",
+    "search": "Tìm",
+    "searchPlaceholder": "Tìm từ bất kỳ (tiếng Nhật hoặc tiếng Anh)...",
+    "shuffle": "Trộn thẻ",
+    "loadMore": "Thêm từ",
+    "known": "Đã thuộc",
+    "markKnown": "Đánh dấu đã thuộc",
+    "knownCount": "{{count}} từ đã thuộc",
+    "common": "Thông dụng"
   }
 }
