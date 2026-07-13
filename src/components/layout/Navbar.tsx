@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { NAV_LINKS } from "@/constants/siteData";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { useScrolled } from "@/hooks/useScrolled";
 
 export function Navbar() {
@@ -22,7 +23,7 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md" : "bg-transparent"
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,7 +33,7 @@ export function Navbar() {
               {/* <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                 <span className="text-white font-bold text-sm">日</span>
               </div> */}
-              <span className="font-black text-xl text-slate-800 tracking-tight">
+              <span className="font-black text-xl text-slate-800 dark:text-slate-100 tracking-tight">
                 Koto<span className="text-rose-500">ba</span>
               </span>
             </Link>
@@ -46,8 +47,8 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 ${isActive
-                    ? "text-rose-500 bg-rose-50 font-semibold"
-                    : "text-slate-600 hover:text-rose-500 hover:bg-rose-50"
+                    ? "text-rose-500 bg-rose-50 dark:bg-rose-950/50 font-semibold"
+                    : "text-slate-600 dark:text-slate-300 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50"
                     }`}
                 >
                   {t(`nav.${link.key}`)}
@@ -58,6 +59,7 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center gap-2">
             <LanguageSwitcher />
+            <ThemeToggle />
           </div>
           {/*
           <div className="hidden md:flex items-center gap-2">
@@ -70,7 +72,7 @@ export function Navbar() {
           </div> */}
 
           <button
-            className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-rose-50"
+            className="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/50"
             onClick={toggleMenu}
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}

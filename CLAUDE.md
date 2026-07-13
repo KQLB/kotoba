@@ -29,6 +29,61 @@ Next.js 16 App Router project (see AGENTS.md above — this version has breaking
 
 There is no backend integration yet: no fetch/axios calls, no API base URL config. The companion API lives in the sibling `kotoba-be` repo (NestJS) but is not yet wired up.
 
+## Dark mode
+
+The site has a class-based dark mode (`dark` class on `<html>`, toggled by `src/components/shared/ThemeToggle.tsx`, persisted in `localStorage`, applied pre-hydration by an inline script in `src/app/layout.tsx`). **Every new page or component MUST support it** — any hardcoded light color needs a `dark:` variant. Follow the existing mapping:
+
+- Section background `bg-white` / `bg-slate-50` → add `dark:bg-slate-950`
+- Card background `bg-white` → add `dark:bg-slate-900`
+- Borders `border-slate-100/200` → add `dark:border-slate-800/700`
+- Text: `text-slate-900` → `dark:text-white`; `text-slate-800` → `dark:text-slate-100`; `text-slate-600` → `dark:text-slate-300`; `text-slate-500` → `dark:text-slate-400`
+- Rose accents: `bg-rose-50` → `dark:bg-rose-950/50`; `text-rose-600` → `dark:text-rose-400`; `border-rose-100` → `dark:border-rose-900`
+- Other color tints follow the same pattern: `{color}-50` bg → `dark:{color}-950/50`, `{color}-600` text → `dark:{color}-400`
+- Color classes stored in `src/constants/siteData.ts` must include their dark variants in the string
+
+Prefer shadcn semantic tokens (`bg-background`, `text-foreground`, `text-muted-foreground`, `border-border`, `bg-card`) for new components — they adapt automatically without `dark:` classes.
+
+## Responsive
+
+Mobile-first Tailwind: base classes target mobile, scale up with `sm:` / `md:` / `lg:` (the only breakpoints in use — don't introduce `xl:`/`2xl:`). **Every new page or component must work from 375px up.** Follow the existing patterns:
+
+- Page/section container: `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8` (narrow content pages use `max-w-3xl`)
+- Card grids: `grid sm:grid-cols-2 lg:grid-cols-3` (or `lg:grid-cols-4`) — single column on mobile by default
+- Two-column layouts stack on mobile: `grid lg:grid-cols-2`
+- Headings scale: e.g. `text-4xl sm:text-5xl`, hero `text-5xl sm:text-6xl lg:text-7xl`
+- Desktop nav is `hidden md:flex`; mobile gets `MobileMenu` behind a `md:hidden` hamburger — new nav items go in both
+- Flex rows that can overflow use `flex-wrap`
+
+## Internationalization (i18n)
+
+The app is bilingual (en/vi) via i18next. **No user-facing string may be hardcoded in JSX** — always `t("key")` from `useTranslation()`, and add the key to BOTH `src/locales/en.json` and `src/locales/vi.json` in the same change (a missing key silently renders the raw key). Rich text uses `<Trans>` with `components` (see HeroSection). Keys are nested per feature (`nav.*`, `hero.*`, `vocabularyPage.*`) — follow that grouping for new features.
+
+## Accessibility
+
+- Clickable things that navigate are `<Link>`/`<a>`; things that act are `<button type="button">` — never a `div` with onClick
+- Icon-only buttons need `aria-label` (see ThemeToggle); toggle/selected state uses `aria-pressed` (see LanguageSwitcher, Flashcard)
+- Images need meaningful `alt` (or `alt=""` if decorative); one `<h1>` per page, headings in order
+- Never remove focus outlines; interactive elements must be reachable and operable by keyboard (see VocabularyDeck key handling)
+
+## SEO
+
+- Every route exports `metadata` (title + description) via the Next Metadata API. This only works in Server Components — keep `page.tsx` as a server component and push `"use client"` down into child components (vocabulary/page.tsx currently violates this; don't copy it)
+- Use semantic elements (`<main>`, `<section>`, `<nav>`, `<footer>`) and real heading hierarchy
+
+## Performance
+
+- Don't add `"use client"` to a component that has no state/effects/browser APIs — server components are the default
+- Images go through `next/image`, not `<img>`
+- Don't add a dependency for what a few lines or an existing dep (lucide-react, tailwind, i18next) already covers
+
+## Security
+
+Applies once the `kotoba-be` API gets wired up:
+
+- Secrets only in server-side env vars — anything `NEXT_PUBLIC_*` ships to the browser, so never put keys/tokens there
+- Never render API/user-provided strings with `dangerouslySetInnerHTML`; the only allowed use is the theme-init script in `layout.tsx`
+- Validate/narrow external data at the fetch boundary (typed parse helpers in `src/lib/api/`), don't trust response shapes
+
 ## Folder tree
 
 ```
