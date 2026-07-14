@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { VocabularyExplorer } from "@/components/vocabulary/VocabularyExplorer";
+import { ComingSoonPage } from "@/components/shared/ComingSoonPage";
 
 export const metadata: Metadata = {
-  title: "Vocabulary Flashcards - Kotoba",
-  description:
-    "Study Japanese vocabulary with JLPT flashcards powered by the Jisho dictionary. Filter by level, search any word, and track what you've memorized.",
+  title: "Vocabulary - Kotoba",
+  description: "Browse Japanese vocabulary by JLPT level. Coming soon to Kotoba.",
 };
 
 export default function VocabularyPage() {
-  return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-950 min-h-screen">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <VocabularyExplorer />
-      </div>
-    </section>
-  );
+  return <ComingSoonPage navKey="vocabulary" />;
 }

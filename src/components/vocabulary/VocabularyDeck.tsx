@@ -23,7 +23,7 @@ function shuffle(cards: Vocabulary[]): Vocabulary[] {
 }
 
 const controlButtonClass =
-  "flex items-center gap-1 px-4 py-2 text-sm font-bold text-slate-500 dark:text-slate-400 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 disabled:opacity-40 disabled:cursor-not-allowed hover:border-rose-200 dark:hover:border-rose-800 hover:text-rose-500 transition-colors";
+  "flex items-center gap-1.5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 disabled:opacity-40 disabled:cursor-not-allowed hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors";
 
 // Mounted with `key={level + keyword}` by the parent so changing the filter
 // remounts this component with fresh state instead of resetting in an effect.
@@ -111,7 +111,7 @@ export function VocabularyDeck({ level, keyword }: VocabularyDeckProps) {
 
   if (loading) {
     return (
-      <div className="min-h-[320px] bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 text-slate-400">
+      <div className="min-h-85 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex flex-col items-center justify-center gap-3 text-slate-400">
         <Loader2 className="animate-spin" size={28} />
         <p className="text-sm">{t("vocabularyPage.loading")}</p>
       </div>
@@ -120,7 +120,7 @@ export function VocabularyDeck({ level, keyword }: VocabularyDeckProps) {
 
   if (error || cards.length === 0) {
     return (
-      <div className="min-h-[320px] bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col items-center justify-center gap-3 text-slate-400 px-6 text-center">
+      <div className="min-h-85 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex flex-col items-center justify-center gap-3 text-slate-400 px-6 text-center">
         <p className="text-sm">{error ? t("vocabularyPage.error") : t("vocabularyPage.empty")}</p>
       </div>
     );
@@ -145,13 +145,13 @@ export function VocabularyDeck({ level, keyword }: VocabularyDeckProps) {
           type="button"
           onClick={() => toggleKnown(current.id)}
           aria-pressed={isKnown}
-          className={`flex items-center gap-1 px-4 py-2 text-sm font-bold rounded-xl border transition-colors ${
+          className={`flex items-center gap-1.5 px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border transition-colors ${
             isKnown
-              ? "bg-emerald-500 text-white border-emerald-500"
-              : "bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-emerald-300 hover:text-emerald-600"
+              ? "bg-emerald-600 text-white border-emerald-600"
+              : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-400"
           }`}
         >
-          <Check size={16} />
+          <Check size={15} strokeWidth={2.5} />
           {isKnown ? t("vocabularyPage.known") : t("vocabularyPage.markKnown")}
         </button>
 
@@ -176,19 +176,27 @@ export function VocabularyDeck({ level, keyword }: VocabularyDeckProps) {
         )}
       </div>
 
+      {/* Progress bar */}
+      <div className="mt-6 h-1 w-full rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+        <div
+          className="h-full bg-slate-900 dark:bg-white transition-[width] duration-300"
+          style={{ width: `${((index + 1) / cards.length) * 100}%` }}
+        />
+      </div>
+
       {/* Navigation */}
-      <div className="flex items-center justify-between mt-6">
+      <div className="flex items-center justify-between mt-4">
         <button type="button" onClick={goPrev} disabled={index === 0} className={controlButtonClass}>
           <ChevronLeft size={16} />
           {t("vocabularyPage.prev")}
         </button>
 
         <div className="text-center">
-          <span className="block text-sm font-bold text-slate-500 dark:text-slate-400">
+          <span className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
             {t("vocabularyPage.progress", { current: index + 1, total: cards.length })}
           </span>
           {knownCount > 0 && (
-            <span className="block text-xs text-emerald-600 dark:text-emerald-400 mt-0.5">
+            <span className="block text-[11px] text-emerald-600 dark:text-emerald-400 mt-1">
               {t("vocabularyPage.knownCount", { count: knownCount })}
             </span>
           )}
