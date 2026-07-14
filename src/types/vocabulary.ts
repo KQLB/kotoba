@@ -5,16 +5,17 @@ export interface Vocabulary {
   word: string;
   reading: string;
   meaning: string;
-  level: JlptLevel;
+  /** null for dictionary entries without a JLPT tag (e.g. free-text search results) */
+  level: JlptLevel | null;
+  partsOfSpeech: string[];
+  isCommon: boolean;
   exampleSentence: string | null;
-  createdAt: string;
 }
 
 export interface VocabularyListResponse {
   data: Vocabulary[];
   meta: {
     page: number;
-    limit: number;
-    total: number;
+    hasMore: boolean;
   };
 }

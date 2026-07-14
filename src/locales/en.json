@@ -196,6 +196,14 @@
     "flipBackHint": "Tap or press space to flip back",
     "prev": "Previous",
     "next": "Next",
-    "progress": "{{current}} / {{total}}"
+    "progress": "{{current}} / {{total}}",
+    "search": "Search",
+    "searchPlaceholder": "Search any word (Japanese or English)...",
+    "shuffle": "Shuffle",
+    "loadMore": "More words",
+    "known": "Known",
+    "markKnown": "Mark as known",
+    "knownCount": "{{count}} known",
+    "common": "Common"
   }
 }
