@@ -23,6 +23,7 @@ import type {
 export const NAV_LINKS: NavLink[] = [
   { key: "home", href: "/" },
   { key: "vocabulary", href: "/vocabulary" },
+  { key: "flashcards", href: "/flashcard" },
   { key: "grammar", href: "/grammar" },
   { key: "kanji", href: "/kanji" },
   { key: "jlpt", href: "/jlpt" },

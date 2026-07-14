@@ -27,24 +27,24 @@ export function Flashcard({ vocab, flipped, known, onFlip }: FlashcardProps) {
       type="button"
       onClick={onFlip}
       aria-pressed={flipped}
-      className="relative w-full min-h-[320px] bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col items-center justify-center px-8 py-10 text-center cursor-pointer"
+      className="relative w-full min-h-85 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-shadow duration-200 flex flex-col items-center justify-center px-8 py-12 text-center cursor-pointer"
     >
       {known && (
-        <span className="absolute top-4 right-4 flex items-center gap-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
-          <Check size={14} /> {t("vocabularyPage.known")}
+        <span className="absolute top-5 right-5 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+          <Check size={13} strokeWidth={2.5} /> {t("vocabularyPage.known")}
         </span>
       )}
 
-      <div className="flex items-center gap-2 mb-6">
+      <div className="flex items-center gap-2 mb-8">
         {vocab.level && (
           <span
-            className={`inline-block px-3 py-1 text-xs font-bold rounded-full border ${LEVEL_STYLES[vocab.level]}`}
+            className={`inline-block px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full border ${LEVEL_STYLES[vocab.level]}`}
           >
             {vocab.level}
           </span>
         )}
         {vocab.isCommon && (
-          <span className="inline-block px-3 py-1 text-xs font-bold rounded-full border bg-slate-50 text-slate-500 border-slate-100 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700">
+          <span className="inline-block px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full border bg-slate-50 text-slate-500 border-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700">
             {t("vocabularyPage.common")}
           </span>
         )}
@@ -52,22 +52,22 @@ export function Flashcard({ vocab, flipped, known, onFlip }: FlashcardProps) {
 
       {!flipped ? (
         <>
-          <p className="text-5xl font-black text-slate-900 dark:text-white mb-3">{vocab.word}</p>
-          <p className="text-xl text-slate-500 dark:text-slate-400">{vocab.reading}</p>
-          <p className="mt-8 text-sm text-slate-400">{t("vocabularyPage.flipHint")}</p>
+          <p className="text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">{vocab.word}</p>
+          <p className="text-lg text-slate-500 dark:text-slate-400">{vocab.reading}</p>
+          <p className="mt-10 text-[11px] uppercase tracking-widest text-slate-400 dark:text-slate-500">{t("vocabularyPage.flipHint")}</p>
         </>
       ) : (
         <>
-          <p className="text-2xl font-black text-rose-500 mb-4">{vocab.meaning}</p>
+          <p className="font-serif text-3xl tracking-tight text-slate-900 dark:text-white mb-5">{vocab.meaning}</p>
           {vocab.partsOfSpeech.length > 0 && (
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500 mb-2">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-rose-600 dark:text-rose-400 mb-3">
               {vocab.partsOfSpeech.join(" · ")}
             </p>
           )}
           {vocab.exampleSentence && (
-            <p className="text-slate-600 dark:text-slate-300 max-w-md">{vocab.exampleSentence}</p>
+            <p className="font-serif text-lg leading-relaxed text-slate-600 dark:text-slate-300 max-w-md">{vocab.exampleSentence}</p>
           )}
-          <p className="mt-8 text-sm text-slate-400">{t("vocabularyPage.flipBackHint")}</p>
+          <p className="mt-10 text-[11px] uppercase tracking-widest text-slate-400 dark:text-slate-500">{t("vocabularyPage.flipBackHint")}</p>
         </>
       )}
     </button>
